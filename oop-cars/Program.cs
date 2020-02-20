@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace oop_cars
 {
@@ -6,7 +7,31 @@ namespace oop_cars
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Start your engines!");
+            List<Car> cars = new List<Car>();
+
+            Manufacturer bmw = new Manufacturer() { Name = "BMW" };
+
+            Car fiveTwenty = bmw.BuildCar("520", 190);
+            cars.Add(fiveTwenty);
+
+            Car threeTwentyFive = bmw.BuildCar("325", 210);
+            cars.Add(threeTwentyFive);
+
+            Manufacturer audi = new Manufacturer() { Name = "Audi" };
+
+            Car aFour = audi.BuildCar("A4", 150);
+            cars.Add(aFour);
+
+            Car aSix = audi.BuildCar("A6", 190);
+            cars.Add(aSix);
+
+            var carsEnumerator = cars.GetEnumerator();
+            while (carsEnumerator.MoveNext())
+            {
+                carsEnumerator.Current.Drive();
+            }
+            Console.ReadLine();
         }
     }
 }

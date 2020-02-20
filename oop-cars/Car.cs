@@ -32,7 +32,7 @@ namespace oop_cars
 
         public void Drive()
         {
-            Console.WriteLine();
+            Console.WriteLine($"Engage: '{this._manufacturer.Name} - {this._model}");
         }
 
     }
