@@ -10,7 +10,7 @@ namespace oop_cars
             Console.WriteLine("Start your engines!");
             List<Car> cars = new List<Car>();
 
-            Manufacturer bmw = new Manufacturer() { Name = "BMW" };
+            Manufacturer bmw = new Manufacturer("BMW");
 
             Car fiveTwenty = bmw.BuildCar("520", 190);
             cars.Add(fiveTwenty);
@@ -18,7 +18,7 @@ namespace oop_cars
             Car threeTwentyFive = bmw.BuildCar("325", 210);
             cars.Add(threeTwentyFive);
 
-            Manufacturer audi = new Manufacturer() { Name = "Audi" };
+            Manufacturer audi = new Manufacturer("Audi");
 
             Car aFour = audi.BuildCar("A4", 150);
             cars.Add(aFour);

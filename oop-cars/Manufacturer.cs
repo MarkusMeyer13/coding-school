@@ -23,6 +23,13 @@ namespace oop_cars
             set { _name = value; }
         }
 
+        private Manufacturer() { }
+
+        public Manufacturer(string name)
+        {
+            this._name = name;
+        }
+
         /// <summary>
         /// Builds the car.
         /// </summary>
@@ -31,8 +38,8 @@ namespace oop_cars
         /// <returns>Car.</returns>
         public Car BuildCar(string model, int ps)
         {
-            Engine engine = new Engine() { PS = ps };
-            Car car = new Car() { Manufacturer = this, Model = model, Engine=engine };
+            Engine engine = new Engine(ps);
+            Car car = new Car(model, engine, this);
             return car;
         }
     }

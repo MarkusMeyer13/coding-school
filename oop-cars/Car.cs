@@ -30,9 +30,20 @@ namespace oop_cars
             set { _model = value; }
         }
 
+        public string SerialNumber { get; set; } = Guid.NewGuid().ToString();
+
+        private Car() { }
+
+        public Car(string model, Engine engine, Manufacturer manufacturer)
+        {
+            this.Model = model;
+            this.Engine = engine;
+            this.Manufacturer = manufacturer;
+        }
+
         public void Drive()
         {
-            Console.WriteLine($"Engage: '{this._manufacturer.Name} - {this._model}");
+            Console.WriteLine($"Engage: '{this.Manufacturer.Name}'\t- {this.Model}\t{this.SerialNumber}");
         }
 
     }

@@ -13,6 +13,12 @@ namespace oop_cars
             get { return _ps; }
             set { _ps = value; }
         }
+        private Engine() { }
+
+        public Engine(int ps)
+        {
+            this._ps = ps;
+        }
 
     }
 }
