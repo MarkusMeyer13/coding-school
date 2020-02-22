@@ -12,18 +12,18 @@ namespace oop_cars
 
             Manufacturer bmw = new Manufacturer("BMW");
 
-            Car fiveTwenty = bmw.BuildCar("520", 190);
+            Car fiveTwenty = bmw.BuildCar("520", 190, 21);
             cars.Add(fiveTwenty);
 
-            Car threeTwentyFive = bmw.BuildCar("325", 210);
+            Car threeTwentyFive = bmw.BuildCar("325", 210, 19);
             cars.Add(threeTwentyFive);
 
             Manufacturer audi = new Manufacturer("Audi");
 
-            Car aFour = audi.BuildCar("A4", 150);
+            Car aFour = audi.BuildCar("A4", 150, 19);
             cars.Add(aFour);
 
-            Car aSix = audi.BuildCar("A6", 190);
+            Car aSix = audi.BuildCar("A6", 190, 21);
             cars.Add(aSix);
 
             var carsEnumerator = cars.GetEnumerator();

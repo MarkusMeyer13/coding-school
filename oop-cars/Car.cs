@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace oop_cars
@@ -30,19 +31,23 @@ namespace oop_cars
             set { _model = value; }
         }
 
+        public List<Tire> Tires { get; set; }
+
         public string SerialNumber { get; set; } = Guid.NewGuid().ToString();
 
         private Car() { }
 
-        public Car(string model, Engine engine, Manufacturer manufacturer)
+        public Car(string model, Engine engine, Manufacturer manufacturer, List<Tire> tires)
         {
             this.Model = model;
             this.Engine = engine;
             this.Manufacturer = manufacturer;
+            this.Tires = tires;
         }
 
         public void Drive()
         {
+            string msg = string.Format(CultureInfo.InvariantCulture, "Engage '{0}'\t {1}", this.Manufacturer.Name, this.Model);
             Console.WriteLine($"Engage: '{this.Manufacturer.Name}'\t- {this.Model}\t{this.SerialNumber}");
         }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop_cars
 {
-    class Engine
+    public class Engine
     {
         private int _ps;
 
