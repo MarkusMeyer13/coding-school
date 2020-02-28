@@ -32,24 +32,24 @@ namespace oop_cars
         }
 
         public List<Tire> Tires { get; set; }
+        public List<Door> Doors { get; set; }
 
         public string SerialNumber { get; set; } = Guid.NewGuid().ToString();
 
         private Car() { }
 
-        public Car(string model, Engine engine, Manufacturer manufacturer, List<Tire> tires)
+        public Car(string model, Engine engine, Manufacturer manufacturer, List<Tire> tires, List<Door> doors)
         {
             this.Model = model;
             this.Engine = engine;
             this.Manufacturer = manufacturer;
             this.Tires = tires;
+            this.Doors = doors;
         }
 
         public void Drive()
         {
-            string msg = string.Format(CultureInfo.InvariantCulture, "Engage '{0}'\t {1}", this.Manufacturer.Name, this.Model);
-            Console.WriteLine($"Engage: '{this.Manufacturer.Name}'\t- {this.Model}\t{this.SerialNumber}");
+            Console.WriteLine($"Engage: '{this.Manufacturer.Name}'\t- {this.Model}\t Doors: {this.Doors.Count}\t{this.SerialNumber}");
         }
-
     }
 }

@@ -35,8 +35,12 @@ namespace oop_cars
         /// </summary>
         /// <param name="model">The model.</param>
         /// <param name="ps">The ps.</param>
-        /// <returns>Car.</returns>
-        public Car BuildCar(string model, int ps, int tireSize)
+        /// <param name="tireSize">Size of the tire.</param>
+        /// <param name="carType">Type of the car.</param>
+        /// <returns>
+        /// Car.
+        /// </returns>
+        public Car BuildCar(string model, int ps, int tireSize, CarType carType)
         {
             Engine engine = new Engine(ps);
             List<Tire> tires = new List<Tire>();
@@ -45,7 +49,25 @@ namespace oop_cars
                 tires.Add(new Tire(tireSize));
             }
 
-            Car car = new Car(model, engine, this, tires);
+            int doorCount = 0;
+            switch (carType)
+            {
+                case CarType.Coupe:
+                    doorCount = 2;
+                    break;
+                case CarType.Limousine:
+                    doorCount = 4;
+                    break;
+                default:
+                    break;
+            }
+            List<Door> doors = new List<Door>();
+            for (int i = 0; i < doorCount; i++)
+            {
+                doors.Add(new Door());
+            }
+
+            Car car = new Car(model, engine, this, tires, doors);
             return car;
         }
     }
