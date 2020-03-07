@@ -38,6 +38,8 @@ namespace oop_cars
 
         public string SerialNumber { get; set; } = Guid.NewGuid().ToString();
 
+        public static int NumberOfCars = 0;
+
         private Car() { }
 
         public Car(string model, Engine engine, Manufacturer manufacturer, List<Tire> tires, List<Door> doors, CarType carType)
@@ -48,6 +50,7 @@ namespace oop_cars
             this.Tires = tires;
             this.Doors = doors;
             this.CarType = carType;
+            NumberOfCars++;
         }
 
         public void Drive()

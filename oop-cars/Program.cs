@@ -27,6 +27,7 @@ namespace oop_cars
             Car aSix = audi.BuildCar("A6", 190, 21, CarType.Coupe);
             cars.Add(aSix.SerialNumber, aSix);
 
+            Console.WriteLine("CarType.Coupe:" );
             var carsEnumerator = cars.GetEnumerator();
             while (carsEnumerator.MoveNext())
             {
@@ -35,6 +36,21 @@ namespace oop_cars
                     carsEnumerator.Current.Value.Drive();
                 }
             }
+            Console.WriteLine();
+
+            carsEnumerator = cars.GetEnumerator();
+            Console.WriteLine("CarType.Limousine:");
+            while (carsEnumerator.MoveNext())
+            {
+                if (carsEnumerator.Current.Value.CarType.Equals(CarType.Limousine))
+                {
+                    carsEnumerator.Current.Value.Drive();
+                }
+            }
+            Console.WriteLine();
+
+
+            Console.WriteLine("Car.NumberOfCars: " + Car.NumberOfCars);
             Console.ReadLine();
         }
     }
