@@ -31,6 +31,8 @@ namespace oop_cars
             set { _model = value; }
         }
 
+        public CarType CarType { get; set; }
+
         public List<Tire> Tires { get; set; }
         public List<Door> Doors { get; set; }
 
@@ -38,13 +40,14 @@ namespace oop_cars
 
         private Car() { }
 
-        public Car(string model, Engine engine, Manufacturer manufacturer, List<Tire> tires, List<Door> doors)
+        public Car(string model, Engine engine, Manufacturer manufacturer, List<Tire> tires, List<Door> doors, CarType carType)
         {
             this.Model = model;
             this.Engine = engine;
             this.Manufacturer = manufacturer;
             this.Tires = tires;
             this.Doors = doors;
+            this.CarType = carType;
         }
 
         public void Drive()

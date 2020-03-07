@@ -67,7 +67,7 @@ namespace oop_cars
                 doors.Add(new Door());
             }
 
-            Car car = new Car(model, engine, this, tires, doors);
+            Car car = new Car(model, engine, this, tires, doors, carType);
             return car;
         }
     }
