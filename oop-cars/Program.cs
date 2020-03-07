@@ -52,6 +52,14 @@ namespace oop_cars
 
             Console.WriteLine("Car.NumberOfCars: " + Car.NumberOfCars);
             Console.ReadLine();
+
+            Manufacturer mercedesBenz = new Manufacturer("Mercedes-Benz");
+            Truck actros = mercedesBenz.BuildTruck("Actros", 440, 23);
+
+            actros.Drive();
+            Console.ReadLine();
+
         }
+
     }
 }

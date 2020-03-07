@@ -70,5 +70,33 @@ namespace oop_cars
             Car car = new Car(model, engine, this, tires, doors, carType);
             return car;
         }
+
+        /// <summary>
+        /// Builds the truck.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <param name="ps">The ps.</param>
+        /// <param name="tireSize">Size of the tire.</param>
+        /// <returns></returns>
+        public Truck BuildTruck(string model, int ps, int tireSize)
+        {
+            Engine engine = new Engine(ps);
+            List<Tire> tires = new List<Tire>();
+            for (int i = 0; i < 6; i++)
+            {
+                tires.Add(new Tire(tireSize));
+            }
+
+            int doorCount = 2;
+            List<Door> doors = new List<Door>();
+            for (int i = 0; i < doorCount; i++)
+            {
+                doors.Add(new Door());
+            }
+
+            Truck truck = new Truck(model, engine, this, tires, doors);
+            return truck;
+        }
+
     }
 }
