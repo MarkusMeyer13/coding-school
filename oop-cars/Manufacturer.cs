@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop_cars
 {
-    class Manufacturer
+   public class Manufacturer
     {
         /// <summary>
         /// The name

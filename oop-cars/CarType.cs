@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop_cars
 {
-    enum CarType
+    public enum CarType
     {
         Coupe,
         Limousine

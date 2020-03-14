@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop_cars
 {
-    class Tire
+    public class Tire
     {
         public int Size { get; set; }
 

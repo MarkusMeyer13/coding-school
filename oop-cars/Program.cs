@@ -27,7 +27,7 @@ namespace oop_cars
             Car aSix = audi.BuildCar("A6", 190, 21, CarType.Coupe);
             cars.Add(aSix.SerialNumber, aSix);
 
-            Console.WriteLine("CarType.Coupe:" );
+            Console.WriteLine("CarType.Coupe:");
             var carsEnumerator = cars.GetEnumerator();
             while (carsEnumerator.MoveNext())
             {
@@ -51,12 +51,34 @@ namespace oop_cars
 
 
             Console.WriteLine("Car.NumberOfCars: " + Car.NumberOfCars);
-            Console.ReadLine();
+            //Console.ReadLine();
 
             Manufacturer mercedesBenz = new Manufacturer("Mercedes-Benz");
             Truck actros = mercedesBenz.BuildTruck("Actros", 440, 23);
 
             actros.Drive();
+
+            Dictionary<string, Vehicle> vehicles = new Dictionary<string, Vehicle>
+            {
+                { actros.SerialNumber, actros },
+                { aSix.SerialNumber, aSix },
+                { aFour.SerialNumber, aFour },
+                { fiveTwenty.SerialNumber, fiveTwenty },
+                { threeTwentyFive.SerialNumber, threeTwentyFive },
+            };
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            var vehiclesEnumerator = vehicles.GetEnumerator();
+            Console.WriteLine("All:");
+            while (vehiclesEnumerator.MoveNext())
+            {
+                vehiclesEnumerator.Current.Value.Drive();
+            }
+            Console.WriteLine();
+
             Console.ReadLine();
 
         }
